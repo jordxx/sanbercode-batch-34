@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>sanbercode.com/registrasion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+      
+    <h1>Register Akun Baru !</h1>
+    <h3>Isilah form dibawah ini</h3>
+
+    <form method="post" target="_blank">
+      <label for="fname">First name:</label></br></br>
+      <input type="text" id="fname" name="fname" size="30"/><br/><br/>
+
+      <label for="lname">Last name:</label></br></br>
+      <input type="text" id="lname" name="lname" size="30"/><br/><br/></br>
+
+      
+<table>
+    <label for="gender">Gender :</label> <br><br>
+<tr>
+    <td><input type="radio" name="gender"></td>
+    <td>Male</td>
+
+    <td><input type="radio" name="gender"></td>
+    <td>Female</td>
+
+    <td><input type="radio" name="gender"></td>
+    <td>Other</td>
+</tr>
+</table> </br><br>
+
+
+  <label for="cars">Nationality :</label><br><br>
+  <select id="cars" name="cars">
+    <option value="Indonesia">Indonesia</option>
+    <option value="Singapore">Singapore</option>
+    <option value="Malaysia">Malaysia</option>
+    <option value="Japan">Japan</option>
+  </select> <br><br><br>
+
+
+    <label for="course">Fokus Belajar :</label><br><br>
+  <select id="course" name="course">
+    <option value="reactjs">ReactJS</option>
+    <option value="uiux">UI / UX Design</option>
+    <option value="python">Python - Data Science</option>
+    <option value="wp">Wordpress CMS</option>
+  </select><br><br><br>
+
+  <table>
+    <label for="lang">Language :</label> <br><br>
+<tr>
+    <td><input type="checkbox" name="lang"></td>
+    <td>Indonesia</td>
+
+    <td><input type="checkbox" name="lang"></td>
+    <td>English</td>
+</tr>
+</table> </br>
+
+<p>Deskripsi Saya : </p>
+<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Enter text here . . .">
+</textarea>
+<br><br>
+
+    <input type="submit" value="Submit" onclick="clicked(event)"/>
+    <script>
+function clicked(e)
+{
+    if(!confirm('Are you sure?')) {
+        e.preventDefault();
+    }
+}
+</script>
+
+    </form>
+  </body>
+</html>
