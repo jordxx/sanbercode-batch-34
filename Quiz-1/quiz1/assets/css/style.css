@@ -1,0 +1,250 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins";
+  font-size: 22px;
+}
+
+/* Buatlah styling setiap section dibawah ini */
+.container {
+  width: 780px;
+  margin: auto;
+}
+
+.container .container_hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  background-color: #146c63;
+  border-radius: 10px;
+}
+
+.container .container_hero {
+  padding: 3vh;
+}
+
+.container .container_hero h1 {
+  color: white;
+  font-size: 20px;
+}
+
+.container .container_hero p {
+  color: white;
+  font-size: 15px;
+  text-align: right;
+}
+
+.container .container_bottom {
+  margin-top: 2vh;
+}
+
+.container .container_bottom p {
+  font-size: 15px;
+}
+
+.container_bottom button {
+  font-size: 15px;
+}
+
+.container .container_support {
+  padding-top: 3vh;
+}
+
+.container .container_support .logo {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  place-items: center;
+  margin-top: 2vh;
+}
+
+.container_support p {
+  font-size: 10px;
+  text-align: center;
+}
+
+.container .container_features_title {
+  margin-top: 12vh;
+}
+
+.container_features_title hr {
+  width: 38%;
+  text-align: left;
+  margin-left: 0;
+  background-color: #293235;
+  height: 5px;
+  border: 0;
+}
+.container .container_features {
+  margin-top: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+}
+
+.container_features .container_features-card {
+  padding: 4vh;
+}
+
+.container_features h3 {
+  font-size: 20px;
+  padding-bottom: 5vh;
+}
+
+.container_features p {
+  font-size: 10px;
+}
+
+.container .container_pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 3vh;
+  margin-top: 10vh;
+  background-color: #243841;
+  padding: 7vh;
+}
+
+.container .container_pricing_title hr {
+  width: 20%;
+  text-align: left;
+  margin-left: 0;
+  background-color: #293235;
+  height: 5px;
+  border: 0;
+}
+
+.container .container_pricing .container_pricing-card {
+  padding: 2vh;
+  background-color: white;
+  border-radius: 1vh;
+}
+
+.container .container_pricing .container_pricing-card h1 {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.container .container_pricing .container_pricing-card small {
+  font-size: 0.5em;
+  text-align: center;
+  padding-left: 5vh;
+}
+
+.container .container_pricing .container_pricing-card ul {
+  margin-top: 2vh;
+}
+
+.container .container_pricing .container_pricing-card ul li {
+  font-size: 10px;
+}
+/* Aturlah breakpoint dibawah ini menggunakan media queries agar responsive dibawah sini*/
+
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+  }
+
+    .container .container_support .logo {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    margin-top: 2vh;
+  }
+
+  .container .container_support .logo img {
+    padding: 2vh;
+  }
+
+  .container_features_title hr {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    background-color: #293235;
+    height: 5px;
+    border: 0;
+  }
+
+  .container .container_pricing_title hr {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    background-color: #293235;
+    height: 5px;
+    border: 0;
+  }
+
+  .container .container_features {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .container .container_pricing {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 3vh;
+    margin-top: 10vh;
+    background-color: #243841;
+    padding: 7vh;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 780px) {
+  .container {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+  }
+
+  .container .container_support .logo {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    margin-top: 2vh;
+  }
+
+  .container .container_support .logo img {
+    padding: 2vh;
+  }
+
+  .container_features_title hr {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    background-color: #293235;
+    height: 5px;
+    border: 0;
+  }
+
+  .container .container_pricing_title hr {
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    background-color: #293235;
+    height: 5px;
+    border: 0;
+  }
+
+  .container .container_features {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+
+  .container .container_pricing {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 3vh;
+    margin-top: 10vh;
+    background-color: #243841;
+    padding: 7vh;
+  }
+
+}
