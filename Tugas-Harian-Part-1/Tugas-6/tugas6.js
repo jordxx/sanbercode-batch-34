@@ -56,11 +56,78 @@ var tanggal = 30;
 var bulan = 9;
 var tahun = 2000;
 
-switch(true){
-  case bulan === 9: {
-    console.log(`Tanggal Lahir ${tanggal} - ${bulan} - ${tahun}`)
-  }
-  break;
+switch (bulan) {
+  case 1:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Januari - ${tahun}`);
+    }
+    break;
+
+  case 2:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Februari - ${tahun}`);
+    }
+    break;
+
+  case 3:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Maret - ${tahun}`);
+    }
+    break;
+
+  case 4:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - April - ${tahun}`);
+    }
+    break;
+
+  case 5:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Mei - ${tahun}`);
+    }
+    break;
+
+  case 6:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Juni - ${tahun}`);
+    }
+    break;
+
+  case 7:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Juli - ${tahun}`);
+    }
+    break;
+
+  case 8:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Agustus - ${tahun}`);
+    }
+    break;
+
+  case 9:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - September - ${tahun}`);
+    }
+    break;
+
+  case 10:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Oktober - ${tahun}`);
+    }
+    break;
+
+  case 11:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - November - ${tahun}`);
+    }
+    break;
+
+  case 12:
+    {
+      console.log(`Tanggal Lahir ${tanggal} - Desember - ${tahun}`);
+    }
+    break;
 }
 // JAWABAN SOAL 2
 
