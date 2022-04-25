@@ -95,13 +95,7 @@ for (var angka = 1 ; angka<=20 ; angka++ ){
 var tinggi = 7;
 var alas = 7;
 
-for (var i = 0 ; i < tinggi ; i++){
-  for (var x = 0 ; x > i ; x++){
-    console.log(x[i]);
-  }
-}
-
-for (let segitiga = "*"; segitiga.length < tinggi; segitiga += "-") {
+for (let segitiga = "*"; segitiga.length < tinggi; segitiga += "*") {
   console.log(segitiga);
 }
 // JAWABAN SOAL 5
