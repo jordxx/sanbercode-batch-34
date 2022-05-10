@@ -1,12 +1,14 @@
 import React from "react";
-import Gambar from "./img/logo.png";
-import MyForm from "./checkbox";
-import "./App.css";
+// import Gambar from "./img/logo.png";
+// import MyForm from "./Tugas 10/checkbox";
+// import "./css/App.css";
+import Tugas11 from "./Tugas11/crud";
+
 
 function App() {
   return (
     <>
-      <div className="App">
+      {/* { <div className="App">
         <div className="card">
           <img src={Gambar} alt="sanbercode"></img>
           <h1 className="titleThings">THINGS TO DO</h1>
@@ -16,7 +18,9 @@ function App() {
             <MyForm/>
           </div>
         </div>
-      </div>
+      </div> } */}
+
+      <Tugas11 />
     </>
   );
 }
