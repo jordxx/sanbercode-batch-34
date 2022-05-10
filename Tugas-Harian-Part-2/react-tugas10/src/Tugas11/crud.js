@@ -111,49 +111,55 @@ const Tugas11 = () => {
         <br />
         <br />
 
-        <form method="POST" onSubmit={handleSubmit}>
-          <label>
-            Form Daftar Harga Buah
-            <br />
-          </label>
-          <label>
-            Nama:
-            <input
-              name="nama"
-              placeholder=" . . . "
-              onChange={handleChange}
-              value={input.nama}
-              type="text"
-            />
-            <br />
-          </label>
+        <div className="container">
+          <form method="POST" onSubmit={handleSubmit}>
+            <label>
+              Form Daftar Harga Buah
+              <br />
+              <br />
+            </label>
+            <label>
+              Nama :
+              <input
+                name="nama"
+                placeholder=" . . . "
+                onChange={handleChange}
+                value={input.nama}
+                type="text"
+              />
+              <br />
+              <br />
+            </label>
 
-          <label>
-            Harga Total:
-            <input
-              name="hargaTotal"
-              placeholder=" . . . "
-              onChange={handleChange}
-              value={input.hargaTotal}
-              type="number"
-            />
-            <br />
-          </label>
+            <label>
+              Harga Total :
+              <input
+                name="hargaTotal"
+                placeholder=" . . . "
+                onChange={handleChange}
+                value={input.hargaTotal}
+                type="number"
+              />
+              <br />
+              <br />
+            </label>
 
-          <label>
-            Berat Total (gr):
-            <input
-              name="beratTotal"
-              placeholder=" . . . "
-              onChange={handleChange}
-              value={input.beratTotal}
-              type="number"
-            />
-            <br />
-          </label>
+            <label>
+              Berat Total (gr) :
+              <input
+                name="beratTotal"
+                placeholder=" . . . "
+                onChange={handleChange}
+                value={input.beratTotal}
+                type="number"
+              />
+              <br />
+              <br />
+            </label>
 
-          <input type="submit" />
-        </form>
+            <input type="submit" />
+          </form>
+        </div>
       </>
     );
 }
