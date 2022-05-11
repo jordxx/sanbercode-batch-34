@@ -64,9 +64,9 @@ const Tugas12 = () => {
     if (currentIndex === -1) {
       axios
         .post(`https://backendexample.sanbercloud.com/api/student-scores`, {
-          name: input,
-          course: input,
-          score: input
+          name: input.name,
+          course: input.course,
+          score: input.score
         })
         .then((res) => {
           setMahasiswa([...mahasiswa,{id: res.data.id, name: res.data.name, course: res.data.course, score: res.data.score}])
