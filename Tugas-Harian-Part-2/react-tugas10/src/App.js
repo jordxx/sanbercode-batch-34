@@ -2,8 +2,8 @@ import React from "react";
 // import Gambar from "./img/logo.png";
 // import MyForm from "./Tugas 10/checkbox";
 // import "./css/App.css";
-import Tugas11 from "./Tugas11/crud";
-
+// import Tugas11 from "./Tugas11/crud";
+import Tugas12 from "./Tugas12/axios";
 
 function App() {
   return (
@@ -20,7 +20,8 @@ function App() {
         </div>
       </div> } */}
 
-      <Tugas11 />
+      {/* <Tugas11 /> */}
+      <Tugas12/>
     </>
   );
 }
