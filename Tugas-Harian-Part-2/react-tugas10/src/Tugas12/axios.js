@@ -45,10 +45,10 @@ const Tugas12 = () => {
     }
   };
 
-  let [input, setInput] = useState({
+  const [input, setInput] = useState({
     name: "",
-    score: 0,
     course: "",
+    score: 0
   });
 
   const handleChange = (event) => {
@@ -60,28 +60,39 @@ const Tugas12 = () => {
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    let { name, course, score } = input;
 
     if (currentIndex === -1) {
       axios
         .post(`https://backendexample.sanbercloud.com/api/student-scores`, {
-          name,
-          course,
-          score,
+          name: input,
+          course: input,
+          score: input
         })
         .then((res) => {
+          setMahasiswa([...mahasiswa,{id: res.data.id, name: res.data.name, course: res.data.course, score: res.data.score}])
           setFecthStatus(true);
         })
         .catch((err) => {
           console.log(err.message);
         });
     } else {
-
+        axios.put(`https://backendexample.sanbercloud.com/api/student-scores/${currentIndex}`, {
+          name: input.name,
+          course: input.course,
+          score: input.score
+        })
+        .then((res) => {
+            let updatedItem = mahasiswa.find((e) => e.id === currentIndex)
+            updatedItem.name = input.name
+            updatedItem.course = input.course;
+            updatedItem.score = input.score;
+            setMahasiswa([...mahasiswa])
+        })
     }
     setInput({
       name: "",
-      score: 0,
       course: "",
+      score: 0,
     });
 
     setCurrentIndex(-1);
@@ -93,9 +104,14 @@ const Tugas12 = () => {
       .then((res) => {
         setFecthStatus(true);
         let data = res.data
-        
+        let Obj = {
+          name: data.name,
+          course: data.course,
+          score: data.score,
+        };
+
         setCurrentIndex(data.id);
-        setInput(data)
+        setInput(Obj)
         console.log(data);
       });
   }
