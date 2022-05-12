@@ -4,47 +4,46 @@ var nilaiDoe = 50;
 
 if (nilaiJohn >= 80) {
   console.log(`Nilai John - ${nilaiJohn} A`);
-}
-else if ( (nilaiJohn >= 70 && nilaiJohn < 80) || (nilaiDoe >= 70 && nilaiDoe < 80) ){
+} else if (
+  (nilaiJohn >= 70 && nilaiJohn < 80) ||
+  (nilaiDoe >= 70 && nilaiDoe < 80)
+) {
   console.log("Nilai John - B");
-}
-
-else if (nilaiJohn >= 60 && nilaiJohn < 70) {
- console.log("Nilai John - C");
-}
-
-else if (nilaiJohn >= 50 && nilaiJohn < 60) {
+} else if (nilaiJohn >= 60 && nilaiJohn < 70) {
+  console.log("Nilai John - C");
+} else if (nilaiJohn >= 50 && nilaiJohn < 60) {
   console.log("Nilai John - D");
-}
-
-else if (nilaiJohn < 50) {
+} else if (nilaiJohn < 50) {
   console.log("Nilai John - E");
 }
 
 switch (true) {
   case nilaiDoe >= 80:
     {
-      console.log("Nilai Doe - A");
-
+      console.log("Nilai Doe - A")
     }
     break;
 
-    case nilaiDoe >= 70 && nilaiDoe < 80:{
+  case nilaiDoe >= 70 && nilaiDoe < 80:
+    {
       console.log("Nilai Doe - B");
     }
     break;
 
-    case nilaiDoe >=60 && nilaiDoe < 70:{
+  case nilaiDoe >= 60 && nilaiDoe < 70:
+    {
       console.log("Nilai Doe - C");
     }
     break;
 
-    case nilaiDoe >= 50 && nilaiDoe < 60: {
-      console.log("Nilai Doe - D")
+  case nilaiDoe >= 50 && nilaiDoe < 60:
+    {
+      console.log("Nilai Doe - D");
     }
     break;
 
-    case nilaiDoe < 50: {
+  case nilaiDoe < 50:
+    {
       console.log("Nilai Doe - E");
     }
     break;
@@ -142,23 +141,23 @@ console.log("LOOPING KE-DUA");
 
 for (var deret = 20; deret > 0; deret -= 2) {
   console.log(deret + " I am going to be a frontend developer.");
-} 
+}
 // JAWABAN SOAL 3
 
 // SOAL 4
-for (var angka = 1 ; angka<=20 ; angka++ ){
-  if (angka % 2 === 0){
-    console.log(`${angka}. Berkualitas`);
-
+for (var angka = 1; angka <= 20; angka++) {
+  if (angka % 2 === 0) {
+    console.log(`${angka}. Berkualitas`)
   } else if (angka % 3 === 0) {
     console.log(`${angka}. I love Coding`);
-  }else {
+  } else {
     console.log(`${angka}. Santai`);
   }
 }
 // JAWABAN SOAL 4
 
 // SOAL 5
+// 1/2 Segitiga
 var tinggi = 7;
 var alas = 7;
 

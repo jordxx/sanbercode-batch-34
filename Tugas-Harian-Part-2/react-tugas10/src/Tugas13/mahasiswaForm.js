@@ -67,7 +67,7 @@ const MahasiswaForm = () => {
             Nilai :
             <input
               name="score"
-              placeholder=" . . . "
+              placeholder=" 0 "
               type="number"
               value={input.score}
               onChange={handleChange}

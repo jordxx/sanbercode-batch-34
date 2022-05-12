@@ -108,7 +108,7 @@ let buku = {
   warnaSampul:["hitam"]
 }
 // kode diatas ini jangan di rubah atau di hapus sama sekali
-console.log({warna, ...dataBukuTambahan, ...buku})
+console.log({warna, ...buku, ...dataBukuTambahan})
 /* Tulis kode jawabannya di sini */ 
 // JAWABAN 6
 

@@ -12,7 +12,7 @@ export const MahasiswaProvider = (props) => {
     score: 0,
   });
 
-  const fetchData = async () => {
+  const fetchData = async () => { 
     let result = await axios.get(
       `https://backendexample.sanbercloud.com/api/student-scores`
     );
@@ -28,7 +28,6 @@ export const MahasiswaProvider = (props) => {
     setMahasiswa(output);
   };
 
-  
   const functionSubmit = () => {
     axios
       .post(`https://backendexample.sanbercloud.com/api/student-scores`, {
@@ -90,16 +89,16 @@ export const MahasiswaProvider = (props) => {
   };
 
   const functionDelete = (index) => {
-     axios
-       .delete(
-         `https://backendexample.sanbercloud.com/api/student-scores/${index}`
-       )
-       .then(() => {
-         let newMahasiswa = mahasiswa.filter((e) => {
-           return e.id !== index;
-         });
-         setMahasiswa(newMahasiswa);
-       })
+    axios
+      .delete(
+        `https://backendexample.sanbercloud.com/api/student-scores/${index}`
+      )
+      .then(() => {
+        let newMahasiswa = mahasiswa.filter((e) => {
+          return e.id !== index;
+        });
+        setMahasiswa(newMahasiswa);
+      });
   };
 
   const functions = {
@@ -107,21 +106,12 @@ export const MahasiswaProvider = (props) => {
     functionDelete,
     functionSubmit,
     functionUpdate,
-    functionEdit
+    functionEdit,
   };
 
   return (
-    <MahasiswaContext.Provider
-      value={{
-        mahasiswa,
-        setMahasiswa,
-        currentIndex,
-        setCurrentIndex,
-        input,
-        setInput,
-        functions
-      }}
-    >
+    <MahasiswaContext.Provider 
+    value={{mahasiswa, setMahasiswa, currentIndex, setCurrentIndex, input, setInput, functions }}>
       {props.children}
     </MahasiswaContext.Provider>
   );
