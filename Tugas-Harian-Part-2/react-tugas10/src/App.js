@@ -3,7 +3,8 @@ import React from "react";
 // import MyForm from "./Tugas 10/checkbox";
 // import "./css/App.css";
 // import Tugas11 from "./Tugas11/crud";
-import Tugas12 from "./Tugas12/axios";
+// import Tugas12 from "./Tugas12/axios";
+import Mahasiswa from "./Tugas13/mahasiswa";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
       </div> } */}
 
       {/* <Tugas11 /> */}
-      <Tugas12/>
+      {/* <Tugas12/> */}
+      <Mahasiswa/>
     </>
   );
 }
