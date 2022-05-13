@@ -1,117 +1,116 @@
 import React, { useState } from "react";
-import "./style.css";
+import "../Tugas11/crud.css";
 
 const Tugas11 = () => {
-    
-    const [daftarBuah, setDaftarBuah] = useState([
-      { nama: "Nanas", hargaTotal: 100000, beratTotal: 4000 },
-      { nama: "Manggis", hargaTotal: 350000, beratTotal: 10000 },
-      { nama: "Nangka", hargaTotal: 90000, beratTotal: 2000 },
-      { nama: "Durian", hargaTotal: 400000, beratTotal: 5000 },
-      { nama: "Strawberry", hargaTotal: 120000, beratTotal: 6000 },
-    ]);
+  const [daftarBuah, setDaftarBuah] = useState([
+    { nama: "Nanas", hargaTotal: 100000, beratTotal: 4000 },
+    { nama: "Manggis", hargaTotal: 350000, beratTotal: 10000 },
+    { nama: "Nangka", hargaTotal: 90000, beratTotal: 2000 },
+    { nama: "Durian", hargaTotal: 400000, beratTotal: 5000 },
+    { nama: "Strawberry", hargaTotal: 120000, beratTotal: 6000 },
+  ]);
 
-    let [input, setInput] = useState({
-        nama : "",
-        hargaTotal : 0,
-        beratTotal : 0
-    })
+  let [input, setInput] = useState({
+    nama: "",
+    hargaTotal: 0,
+    beratTotal: 0,
+  });
 
-    const [currentIndex, setCurrentIndex] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
 
-    const handleChange = (ev) => {
-        let inputName = ev.target.name
-        let inVal = ev.target.value
+  const handleChange = (ev) => {
+    let inputName = ev.target.name;
+    let inVal = ev.target.value;
 
-        setInput({ ...input, [inputName]: inVal });
+    setInput({ ...input, [inputName]: inVal });
+  };
+
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+    let { nama, hargaTotal, beratTotal } = input;
+
+    let newData = daftarBuah;
+
+    if (currentIndex === null) {
+      newData = [...daftarBuah, { nama, hargaTotal, beratTotal }];
+    } else {
+      newData[currentIndex] = input;
     }
 
-    const handleSubmit = (ev) => {
-        ev.preventDefault()
-        let { nama, hargaTotal, beratTotal } = input
+    setDaftarBuah([...newData]);
+    setInput({
+      nama: "",
+      hargaTotal: 0,
+      beratTotal: 0,
+    });
+  };
 
-        let newData = daftarBuah
+  const handleEdit = (ev) => {
+    let index = parseInt(ev.target.value);
+    let editItem = daftarBuah[index];
 
-        if(currentIndex === null){
-            newData = [...daftarBuah, { nama, hargaTotal, beratTotal }];
-        } else {
-            newData[currentIndex] = input
-        }
+    setInput(editItem);
+    setCurrentIndex(index);
+  };
 
-        setDaftarBuah([...newData])
-        setInput({
-          nama: "",
-          hargaTotal: 0,
-          beratTotal: 0,
-        });
-    }
+  const handleDelete = (ev) => {
+    let index = parseInt(ev.target.value);
+    let deletedItem = daftarBuah[index];
+    let newData = daftarBuah.filter((e) => {
+      return e !== deletedItem;
+    });
 
-    const handleEdit = (ev) => {
-        let index = parseInt(ev.target.value)
-        let editItem = daftarBuah[index]
+    setDaftarBuah(newData);
+  };
 
-        setInput(editItem)
-        setCurrentIndex(index)
-    }
+  return (
+    <>
+      <h1 className="h1Crud"> Daftar Harga Buah</h1>
+      <table className="tableCrud">
+        <thead className="thCrud">
+          <tr>
+            <th>No</th>
+            <th>Nama</th>
+            <th>Harga Buah</th>
+            <th>Berat Total</th>
+            <th>Harga /kg</th>
+            <th>Action</th>
+          </tr>
+        </thead>
 
-    const handleDelete = (ev) => {
-        let index = parseInt(ev.target.value)
-        let deletedItem = daftarBuah[index]
-        let newData = daftarBuah.filter((e) => {
-            return e !== deletedItem
-        })
+        <tbody>
+          {daftarBuah !== null && (
+            <>
+              {daftarBuah.map((daftar, index) => {
+                let beratKg = daftar.beratTotal / 1000;
+                let totalHarga = daftar.hargaTotal / beratKg;
+                return (
+                  <tr key={index}>
+                    <td>{index + 1}</td>
+                    <td>{daftar.nama}</td>
+                    <td>{daftar.hargaTotal}</td>
+                    <td>{beratKg} kg</td>
+                    <td>{totalHarga}</td>
+                    <td>
+                      <button onClick={handleEdit} value={index}>
+                        update
+                      </button>
+                      <button onClick={handleDelete} value={index}>
+                        delete
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </>
+          )}
+        </tbody>
+      </table>
 
-        setDaftarBuah(newData)
-    }
-
-    return (
-      <>
-        <h1> Daftar Harga Buah</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Nama</th>
-              <th>Harga Buah</th>
-              <th>Berat Total</th>
-              <th>Harga /kg</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {daftarBuah !== null && (
-              <>
-                {daftarBuah.map((daftar, index) => {
-                  let beratKg = daftar.beratTotal / 1000;
-                  let totalHarga = daftar.hargaTotal / beratKg;
-                  return (
-                    <tr key={index}>
-                      <td>{index + 1}</td>
-                      <td>{daftar.nama}</td>
-                      <td>{daftar.hargaTotal}</td>
-                      <td>{beratKg} kg</td>
-                      <td>{totalHarga}</td>
-                      <td>
-                        <button onClick={handleEdit} value={index}>
-                          update
-                        </button>
-                        <button onClick={handleDelete} value={index}>
-                          delete
-                        </button>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </>
-            )}
-          </tbody>
-        </table>
-
-        <br />
-        <br />
-
-        <div className="container">
+      <br />
+      <br />
+      <div className="containerCrud">
+        <div className="divCrud">
           <form method="POST" onSubmit={handleSubmit}>
             <label>
               Form Daftar Harga Buah
@@ -157,11 +156,12 @@ const Tugas11 = () => {
               <br />
             </label>
 
-            <input type="submit" />
+            <input className="inputCrud" type="submit" />
           </form>
         </div>
-      </>
-    );
-}
+      </div>
+    </>
+  );
+};
 
-export default Tugas11
+export default Tugas11;

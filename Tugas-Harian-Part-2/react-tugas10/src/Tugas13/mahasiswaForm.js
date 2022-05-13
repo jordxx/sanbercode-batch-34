@@ -30,54 +30,56 @@ const MahasiswaForm = () => {
   }
 
     return (
-      <div className="container">
-        <form method="POST" onSubmit={handleSubmit}>
-          <label>
-            <h1>Form Nilai Mahasiswa</h1>
-            <br />
-            <br />
-          </label>
-          <label>
-            Nama :
-            <input
-              name="name"
-              placeholder=" . . . "
-              type="text"
-              value={input.name}
-              onChange={handleChange}
-            />
-            <br />
-            <br />
-          </label>
+      <div className="containerMahasiswa">
+        <div className="divMahasiswa">
+          <form method="POST" onSubmit={handleSubmit}>
+            <label>
+              <h1 className="h1Mahasiswa ">Form Nilai Mahasiswa</h1>
+              <br />
+              <br />
+            </label>
+            <label>
+              Nama :
+              <input
+                name="name"
+                placeholder=" . . . "
+                type="text"
+                value={input.name}
+                onChange={handleChange}
+              />
+              <br />
+              <br />
+            </label>
 
-          <label>
-            Mata Kuliah :
-            <input
-              name="course"
-              placeholder=" . . . "
-              type="text"
-              value={input.course}
-              onChange={handleChange}
-            />
-            <br />
-            <br />
-          </label>
+            <label>
+              Mata Kuliah :
+              <input
+                name="course"
+                placeholder=" . . . "
+                type="text"
+                value={input.course}
+                onChange={handleChange}
+              />
+              <br />
+              <br />
+            </label>
 
-          <label>
-            Nilai :
-            <input
-              name="score"
-              placeholder=" 0 "
-              type="number"
-              value={input.score}
-              onChange={handleChange}
-            />
-            <br />
-            <br />
-          </label>
+            <label>
+              Nilai :
+              <input
+                name="score"
+                placeholder=" 0 "
+                type="number"
+                value={input.score}
+                onChange={handleChange}
+              />
+              <br />
+              <br />
+            </label>
 
-          <input type="submit" />
-        </form>
+            <input type="submit" />
+          </form>
+        </div>
       </div>
     );
 }

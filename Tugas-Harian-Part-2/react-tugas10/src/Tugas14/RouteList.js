@@ -1,14 +1,15 @@
 import React, { useContext, useEffect } from "react";
 import "./style.css";
-import { MahasiswaContext } from "./mahasiswaContext";
+import { RouteContext } from "./RouteContext";
+import { Link } from "react-router-dom";
 
-const MahasiswaList = () => {
-  const{ mahasiswa, functions} = useContext(MahasiswaContext)
-  const {fetchData, functionDelete, functionEdit} = functions
 
+const RouteMahasiswaList = () => {
+  const { mahasiswa, functions } = useContext(RouteContext);
+  const { fetchData, functionDelete, functionEdit } = functions;
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
 
   const handleIndexNil = (param) => {
@@ -27,13 +28,14 @@ const MahasiswaList = () => {
 
   const handleEdit = (ev) => {
     let idMahasiswa = parseInt(ev.target.value);
-    functionEdit(idMahasiswa);
+    functionEdit(idMahasiswa)
+
   };
 
   const handleDelete = (ev) => {
     let index = parseInt(ev.target.value);
 
-    functionDelete(index)
+    functionDelete(index);
   };
 
   return (
@@ -77,9 +79,17 @@ const MahasiswaList = () => {
           )}
         </tbody>
       </table>
-      <br/><br/>
+      <br />
+
+      <Link to="Tugas14/create">
+        <input
+          type="button"
+          className="createButton"
+          value="Input data mahasiswa"
+        />
+      </Link>
     </>
   );
 };
 
-export default MahasiswaList;
+export default RouteMahasiswaList;

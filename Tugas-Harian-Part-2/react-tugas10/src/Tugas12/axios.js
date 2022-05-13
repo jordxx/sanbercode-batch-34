@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./style.css";
+import "./axios.css";
 
 const Tugas12 = () => {
   const [mahasiswa, setMahasiswa] = useState([]);
@@ -129,8 +129,8 @@ const Tugas12 = () => {
 
   return (
     <>
-      <h1>Daftar Nilai Mahasiswa</h1>
-      <table>
+      <h1 className="h1Axios">Daftar Nilai Mahasiswa</h1>
+      <table className="tableAxios">
         <thead>
           <tr>
             <th>No</th>
@@ -154,7 +154,9 @@ const Tugas12 = () => {
                     <td>{val.score}</td>
                     <td>{handleIndexNil(val.score)}</td>
                     <td>
-                      <button onClick={handleEdit} value={val.id}>update</button>
+                      <button onClick={handleEdit} value={val.id}>
+                        update
+                      </button>
                       <button onClick={handleDelete} value={val.id}>
                         delete
                       </button>
@@ -170,54 +172,56 @@ const Tugas12 = () => {
       <br />
       <br />
 
-      <div className="container">
-        <form method="POST" onSubmit={handleSubmit}>
-          <label>
-            <h1>Form Nilai Mahasiswa</h1>
-            <br />
-            <br />
-          </label>
-          <label>
-            Nama :
-            <input
-              name="name"
-              placeholder=" . . . "
-              type="text"
-              value={input.name}
-              onChange={handleChange}
-            />
-            <br />
-            <br />
-          </label>
+      <div className="containerAxios">
+        <div className="divAxios">
+          <form method="POST" onSubmit={handleSubmit}>
+            <label>
+              <h1 className="h1Axios">Form Nilai Mahasiswa</h1>
+              <br />
+              <br />
+            </label>
+            <label>
+              Nama :
+              <input
+                name="name"
+                placeholder=" . . . "
+                type="text"
+                value={input.name}
+                onChange={handleChange}
+              />
+              <br />
+              <br />
+            </label>
 
-          <label>
-            Mata Kuliah :
-            <input
-              name="course"
-              placeholder=" . . . "
-              type="text"
-              value={input.course}
-              onChange={handleChange}
-            />
-            <br />
-            <br />
-          </label>
+            <label>
+              Mata Kuliah :
+              <input
+                name="course"
+                placeholder=" . . . "
+                type="text"
+                value={input.course}
+                onChange={handleChange}
+              />
+              <br />
+              <br />
+            </label>
 
-          <label>
-            Nilai :
-            <input
-              name="score"
-              placeholder=" . . . "
-              type="number"
-              value={input.score}
-              onChange={handleChange}
-            />
-            <br />
-            <br />
-          </label>
+            <label>
+              Nilai :
+              <input
+                name="score"
+                placeholder=" . . . "
+                type="number"
+                value={input.score}
+                onChange={handleChange}
+              />
+              <br />
+              <br />
+            </label>
 
-          <input type="submit" />
-        </form>
+            <input className="submitAxios" type="submit" />
+          </form>
+        </div>
       </div>
     </>
   );
