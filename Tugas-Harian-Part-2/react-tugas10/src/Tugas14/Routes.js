@@ -22,6 +22,7 @@ function Routes() {
           <Nav />
 
           <Switch>
+            <Route exact path="/" component={MyForm}/>
             <Route exact path="/Tugas10" component={MyForm}/>
             <Route exact path="/Tugas11" component={Tugas11}/>   
             <Route exact path="/Tugas12" component={Tugas12}/>  
