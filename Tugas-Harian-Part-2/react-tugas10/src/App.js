@@ -1,6 +1,14 @@
 import React from "react";
-import Routes from "./Tugas14/Routes";
+import RoutesTw from "./Tugas15/Routes";
+// import Routes from "./Tugas14/Routes";
 
-const App = () => <Routes />;
+
+function App() {
+  return (
+    <>
+    <RoutesTw/>
+    </>
+  );
+}
 
 export default App;

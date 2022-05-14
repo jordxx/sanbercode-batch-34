@@ -65,10 +65,10 @@ const RouteMahasiswaList = () => {
                     <td>{val.score}</td>
                     <td>{handleIndexNil(val.score)}</td>
                     <td>
-                      <button onClick={handleEdit} value={val.id}>
+                      <button className="burtur" onClick={handleEdit} value={val.id}>
                         update
                       </button>
-                      <button onClick={handleDelete} value={val.id}>
+                      <button className="burtur" onClick={handleDelete} value={val.id}>
                         delete
                       </button>
                     </td>

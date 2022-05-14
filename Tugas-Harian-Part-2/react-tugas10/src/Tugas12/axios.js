@@ -154,10 +154,10 @@ const Tugas12 = () => {
                     <td>{val.score}</td>
                     <td>{handleIndexNil(val.score)}</td>
                     <td>
-                      <button onClick={handleEdit} value={val.id}>
+                      <button className="butAx" onClick={handleEdit} value={val.id}>
                         update
                       </button>
-                      <button onClick={handleDelete} value={val.id}>
+                      <button className="butAx" onClick={handleDelete} value={val.id}>
                         delete
                       </button>
                     </td>

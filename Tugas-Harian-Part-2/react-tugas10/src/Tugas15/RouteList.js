@@ -1,14 +1,13 @@
 import React, { useContext, useEffect } from "react";
-import "./style.css";
-import { MahasiswaContext } from "./mahasiswaContext";
+import { RouteContext } from "./RouteContext";
+import { Link } from "react-router-dom";
 
-const MahasiswaList = () => {
-  const{ mahasiswa, functions} = useContext(MahasiswaContext)
-  const {fetchData, functionDelete, functionEdit} = functions
-
+const RouteMahasiswaListtw = () => {
+  const { mahasiswa, functions } = useContext(RouteContext);
+  const { fetchData, functionDelete, functionEdit } = functions;
 
   useEffect(() => {
-    fetchData()
+    fetchData();
   }, []);
 
   const handleIndexNil = (param) => {
@@ -33,16 +32,24 @@ const MahasiswaList = () => {
   const handleDelete = (ev) => {
     let index = parseInt(ev.target.value);
 
-    functionDelete(index)
+    functionDelete(index);
   };
 
   return (
     <>
-      <h1 className="h1Mahasiswa">Daftar Nilai Mahasiswa</h1>
+      <div class="m-10">
+        <Link to="Tugas14/create">
+          <input
+            type="button"
+            class="m-auto w-4/6 block rounded-sm font-medium border rounded-full cursor-pointer text-center text-sm py-4 px-4 text-white bg-gray-900 border-gray-900 hover:bg-black hover:border-black align-midle"
+            value="Input data mahasiswa"
+          />
+        </Link>
+      </div>
       <table className="tableMahasiswa">
         <thead>
           <tr>
-            <th>No</th>
+            <th>NORE</th>
             <th>Nama</th>
             <th>Mata Kuliah</th>
             <th>Nilai</th>
@@ -63,10 +70,20 @@ const MahasiswaList = () => {
                     <td>{val.score}</td>
                     <td>{handleIndexNil(val.score)}</td>
                     <td>
-                      <button className="butList" onClick={handleEdit} value={val.id}>
-                        update
+                      <button
+                        onClick={handleEdit}
+                        value={val.id}
+                        type="button"
+                        className="inline-block rounded-sm font-medium border border-solid cursor-pointer text-center text-sm py-2 px-4 text-blue-400 bg-transparent border-blue-400 hover:bg-blue-400 hover:text-white "
+                      >
+                        Update
                       </button>
-                      <button className="butList" onClick={handleDelete} value={val.id}>
+
+                      <button
+                        className="inline-block m-5 rounded-sm font-medium border border-solid cursor-pointer text-center text-sm py-2 px-4 text-red-400 bg-transparent border-red-400 hover:bg-red-400 hover:text-white "
+                        onClick={handleDelete}
+                        value={val.id}
+                      >
                         delete
                       </button>
                     </td>
@@ -77,9 +94,9 @@ const MahasiswaList = () => {
           )}
         </tbody>
       </table>
-      <br/><br/>
+      <br />
     </>
   );
 };
 
-export default MahasiswaList;
+export default RouteMahasiswaListtw;

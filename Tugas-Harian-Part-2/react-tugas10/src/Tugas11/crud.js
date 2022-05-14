@@ -92,10 +92,10 @@ const Tugas11 = () => {
                     <td>{beratKg} kg</td>
                     <td>{totalHarga}</td>
                     <td>
-                      <button onClick={handleEdit} value={index}>
+                      <button className="butCrud" onClick={handleEdit} value={index}>
                         update
                       </button>
-                      <button onClick={handleDelete} value={index}>
+                      <button className="butCrud" onClick={handleDelete} value={index}>
                         delete
                       </button>
                     </td>

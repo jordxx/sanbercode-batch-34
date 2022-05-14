@@ -8,8 +8,8 @@ import MyForm from "../Tugas10/checkbox";
 import Tugas11 from "../Tugas11/crud";
 import Tugas12 from "../Tugas12/axios";
 import Mahasiswa from "../Tugas13/mahasiswa";
-
 import Nav from "./Nav";
+
 import { RouteMahasiswaProvider } from "./RouteContext";
 import RouteMahasiswaForm from "./RouteForm";
 import RouteMahasiswa from "./RouteMahasiswa";
@@ -19,7 +19,7 @@ function Routes() {
   return (
     <>
       <Router>
-          <Nav />
+          <Nav/>
 
           <Switch>
             <Route exact path="/" component={MyForm}/>

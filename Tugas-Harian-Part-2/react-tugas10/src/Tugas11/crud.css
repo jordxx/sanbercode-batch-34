@@ -13,6 +13,8 @@
 
 .h1Crud {
   text-align: center;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 input[type=text], select {
@@ -43,6 +45,21 @@ input[type=number]{
 input[type=submit]:hover {
   background-color: #45a049;
   
+}
+
+.butCrud{
+  font-size: 16px;
+    letter-spacing: 2px;
+    font-weight: 400 !important;
+    background-color: #e63946ff;
+    color: #fff;
+    padding: 10px 25px;
+    margin: auto;
+    text-align: center;
+    display: inline-block !important;
+    text-decoration: none;
+    border: black;
+    border-radius: 30px;
 }
 
 .divCrud {

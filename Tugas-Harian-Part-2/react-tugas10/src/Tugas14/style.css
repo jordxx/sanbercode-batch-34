@@ -6,6 +6,8 @@
 
 .h1Mahasiswa {
   text-align: center;
+  font-weight: bold;
+  font-size: 30px;
 }
 th,
 td {
@@ -69,4 +71,19 @@ label {
   text-align: center;
   display: block;
   margin-left: 27vh;
+}
+
+.burtur {
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 400 !important;
+  background-color: #e63946ff;
+  color: #fff;
+  padding: 10px 25px;
+  margin: auto;
+  text-align: center;
+  display: inline-block !important;
+  text-decoration: none;
+  border: black;
+  border-radius: 30px;
 }
