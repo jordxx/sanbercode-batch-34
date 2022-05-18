@@ -8,29 +8,64 @@ import MyForm from "../Tugas10/checkbox";
 import Tugas11 from "../Tugas11/crud";
 import Tugas12 from "../Tugas12/axios";
 import Mahasiswa from "../Tugas13/mahasiswa";
-import NavTw from "./Nav";
 import RouteMahasiswa from "../Tugas14/RouteMahasiswa";
 import RouteMahasiswaFormtw from "./RouteForm";
 import { RouteMahasiswaProvider } from "../Tugas14/RouteContext";
 import {RouteMahasiswiProvider} from "./RouteContext"
 import RouteMahasiswatw from "./RouteMahasiswa";
 import RouteMahasiswaForm from "../Tugas14/RouteForm";
+import Login from "../Auth/login";
+import LayoutComponent from "../Layout/LayoutComponent";
+import Register from "../Auth/register";
 
 
 function RoutesTw() {
   return (
     <>
       <Router>
-        <NavTw />
+        {/* <NavTw /> */}
 
         <Switch>
           <Route exact path="/" component={MyForm} />
           <Route exact path="/Tugas10" component={MyForm} />
           <Route exact path="/Tugas11" component={Tugas11} />
-          <Route exact path="/Tugas12" component={Tugas12} />
-          <Route exact path="/Tugas13" component={Mahasiswa} />
-          <Route exact path="/Tugas14" component={RouteMahasiswa} />
-          <Route exact path="/Tugas15" component={RouteMahasiswatw} />
+          <Route exact path="/Tugas12">
+            <LayoutComponent>
+              <Tugas12/>
+            </LayoutComponent>
+          </Route>
+
+          <Route exact path="/Tugas13">
+            <LayoutComponent>
+              <Mahasiswa/>
+            </LayoutComponent>
+          </Route>
+
+
+          <Route exact path="/Tugas14">
+            <LayoutComponent>
+            <RouteMahasiswa/>
+            </LayoutComponent>
+
+          </Route>
+          <Route exact path="/Tugas15">
+            <LayoutComponent>
+              <RouteMahasiswatw/>
+            </LayoutComponent>
+          </Route>
+
+          <Route exact path="/Register">
+            <LayoutComponent>
+            <Register/>
+            </LayoutComponent>
+          </Route>
+
+          <Route exact path="/Login">
+            <LayoutComponent>
+              <Login/>
+            </LayoutComponent>
+          </Route>
+
 
           <RouteMahasiswaProvider>
             <Route

@@ -27,21 +27,23 @@ const RouteMahasiswaListtw = () => {
   const handleEdit = (ev) => {
     let idMahasiswa = parseInt(ev.target.value);
     functionEdit(idMahasiswa);
+    console.log(idMahasiswa)
   };
 
   const handleDelete = (ev) => {
     let index = parseInt(ev.target.value);
-
+    
     functionDelete(index);
+    console.log(index)
   };
 
   return (
     <>
-      <div class="m-10">
+      <div className="m-10">
         <Link to="Tugas14/create">
           <input
             type="button"
-            class="m-auto w-4/6 block rounded-sm font-medium border rounded-full cursor-pointer text-center text-sm py-4 px-4 text-white bg-gray-900 border-gray-900 hover:bg-black hover:border-black align-midle"
+            className="m-auto w-4/6 block rounded-sm font-medium border rounded-full cursor-pointer text-center text-sm py-4 px-4 text-white bg-gray-900 border-gray-900 hover:bg-black hover:border-black align-midle"
             value="Input data mahasiswa"
           />
         </Link>
