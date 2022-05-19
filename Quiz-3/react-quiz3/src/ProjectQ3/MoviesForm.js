@@ -1,10 +1,16 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import { MovieContext } from "./moviesContext";
+import axios from "axios";
 
 const MovieForm = () => {
-  let { Id } = useParams();
+  let {Id} = useParams();
+  // console.log(Id)
+  const { currentIndex, setCurrentIndex, input, setInput, functions } =
+    useContext(MovieContext);
+
+  const { functionUpdate, functionSubmit } = functions;
+
   useEffect(() => {
     if (Id !== undefined) {
       axios
@@ -24,12 +30,7 @@ const MovieForm = () => {
           });
         });
     }
-  }, []);
-
-  const { currentIndex, setCurrentIndex, input, setInput, functions } =
-    useContext(MovieContext);
-
-  const { functionUpdate, functionSubmit } = functionSubmit;
+  }, [setInput, Id]);
 
   const handleChange = (event) => {
     let inputName = event.target.name;
@@ -82,6 +83,7 @@ const MovieForm = () => {
                     Title :
                     <input
                       type="text"
+                      name="name"
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Title"
                       value={input.name}
@@ -95,6 +97,7 @@ const MovieForm = () => {
                     Category :
                     <input
                       type="text"
+                      name="category"
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Category"
                       value={input.category}
@@ -108,9 +111,11 @@ const MovieForm = () => {
                     Description :
                     <textarea
                       rows="5"
-                      class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                      name="description"
+                      className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                       placeholder=". . . . . ."
                       value={input.description}
+                      onChange={handleChange}
                     ></textarea>
                   </div>
                 </div>
@@ -120,8 +125,13 @@ const MovieForm = () => {
                     Year :
                     <input
                       type="number"
+                      name="release_year"
+                      min="2007"
+                      max="3000"
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Release year"
+                      value={input.release_year}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -131,8 +141,12 @@ const MovieForm = () => {
                     Size :
                     <input
                       type="number"
+                      name="size"
+                      min="1"
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Size"
+                      value={input.size}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -142,8 +156,12 @@ const MovieForm = () => {
                     Price :
                     <input
                       type="number"
+                      name="price"
+                      min="1"
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Price"
+                      value={input.price}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -153,9 +171,28 @@ const MovieForm = () => {
                     Rating :
                     <input
                       type="number"
+                      name="rating"
+                      min="1"
+                      max="5"
                       className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                       placeholder="Rating"
+                      value={input.rating}
+                      onChange={handleChange}
                     />
+                  </div>
+                </div>
+
+                <div className="mb-2">
+                  <div className=" relative ">
+                    Image URL :
+                    <textarea
+                      rows="5"
+                      name="image_url"
+                      className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder=". . . . . ."
+                      value={input.image_url}
+                      onChange={handleChange}
+                    ></textarea>
                   </div>
                 </div>
 
@@ -163,10 +200,36 @@ const MovieForm = () => {
                   <div className=" relative ">
                     Platform :
                     <input
-                      type="text"
-                      className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                      placeholder="Platform"
+                      type="checkbox"
+                      name="is_android_app"
+                      checked={input.check}
+                      onChange={(e) => {
+                        handleChange({
+                          target: {
+                            name: e.target.name,
+                            value: e.target.checked,
+                          },
+                        });
+                      }}
+                      className="ml-3"
                     />
+                    Android
+                    <br />
+                    <input
+                      type="checkbox"
+                      name="is_ios_app"
+                      checked={input.check}
+                      onChange={(e) => {
+                        handleChange({
+                          target: {
+                            name: e.target.name,
+                            value: e.target.checked,
+                          },
+                        });
+                      }}
+                      className="ml-20"
+                    />
+                    IOS
                   </div>
                 </div>
 
