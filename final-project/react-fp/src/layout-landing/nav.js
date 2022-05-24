@@ -6,34 +6,30 @@ const NavLanding = () => {
   return (
     <>
       <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-black">
-        <div className="container mx-auto flex flex-wrap items-center justify-between">
-          <div className="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
+        <div className="container mx-3xl flex flex-wrap items-center justify-between">
+          <div className="w-full relative flex justify-between lg:w-auto  px-40 lg:static lg:block lg:justify-start">
             <a
-              className="text-3xl font-bold leading-relaxed inline-block mr-8 py-2 whitespace-nowrap uppercase text-white"
+              className="text-3xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white"
               href="/"
             >
               Jobseek
             </a>
-            <button
-              className="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-              type="button"
-            >
-              <span className="block relative w-6 h-px rounded-sm bg-white"></span>
-              <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-              <span className="block relative w-6 h-px rounded-sm bg-white mt-1"></span>
-            </button>
           </div>
           <div
-            className="lg:flex flex-grow items-center"
+            className="lg:flex flex-grow items-right"
             id="example-navbar-warning"
           >
             <ul className="flex flex-col lg:flex-row list-none ml-auto">
-              <li className="nav-item px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
+              <li className="nav-item px-3 py-4 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
                 <Link to="/Home">Home</Link>
               </li>
 
+              <li className="nav-item px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
+                <Link to="/Vacancy">Jobs</Link>
+              </li>
+
               {!Cookies.get("token") && (
-                <li className="nav-item px-3 py-2 flex items-center text-sm uppercase font-bold leading-snug text-white hover:opacity-75">
+                <li className="nav-item px-3 py-2 flex items-center text-md uppercase font-bold leading-snug text-white hover:opacity-75">
                   <Link to="/Login"> Login</Link>
                 </li>
               )}

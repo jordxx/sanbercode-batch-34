@@ -23,7 +23,7 @@ const Register = () => {
     let { name, email, password } = input;
 
     axios
-      .post(`https://backendexample.sanbersy.com/api/register`, {
+      .post(`https://dev-example.sanbercloud.com/api/register`, {
         name,
         email,
         password,
@@ -33,8 +33,8 @@ const Register = () => {
         let { data } = res;
 
         Cookies.set("token", data.token, { expires: 1 });
-        history.push("/Home");
-        alert("You have been registered !")
+        history.push("/Dashboard");
+        alert("You have been registered !");
       })
       .catch((error) => {
         let { data } = error.response;
